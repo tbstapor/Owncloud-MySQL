@@ -1,22 +1,15 @@
 # Proyecto final owncloud + MySQL
 
-### Descripción
+## Descripción
 
 Proyecto final de docker basado67
 
-### Video Explicación
+## Video Explicación
 
 https://youtu.be/Y0InqSCpjZU
 
-
-
-### Repositorio github
-
-
-
-### Enlace docker hub
-
-
+## Repositorio github
+https://github.com/tbstapor/Owncloud-MySQL.git
 
 ## Bibliografía
 
