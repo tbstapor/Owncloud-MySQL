@@ -1,0 +1,39 @@
+version: "3.9"
+services:
+
+  # Mysql
+  db:
+    image: mysql:latest
+    restart: always
+    ports:
+      - 3306:3306
+    env_file:
+      - ./db.env #cambiar variables de entorno antes de lanzar docker-compose
+    volumes:
+      - dbhdd:/var/lib/mysql
+    networks:
+      - cloudnet
+
+  # Almacenamiento en la nube
+  owncloud:
+    image: owncloud/server:latest
+    restart: always
+    ports:
+      - 4444:8080
+    env_file:
+      - ./owncloud.env #cambiar variables de entorno antes de lanzar docker-compose
+    volumes:
+      - cloudhdd:/mnt/data
+    networks:
+      - cloudnet
+
+    depends_on:
+      - db
+
+#Declaramos red y volumes
+networks:
+  cloudnet:
+
+volumes:
+  cloudhdd:
+  dbhdd:
